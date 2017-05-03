@@ -15,7 +15,8 @@
     </ion-item>
     <ion-item *ngFor="let item of lista | async">
       
-      <p>Usuário: {{item.usuario}} - Mensagem: {{item.texto}}</p>
+      <p>Usuário: {{item.usuario}} </p>
+      <p>Mensagem: {{item.texto}}</p>
       <ion-note item-right>
         {{item.data | date:'HH:mm'}}
       </ion-note>

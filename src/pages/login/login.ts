@@ -25,7 +25,6 @@ export class LoginPage {
   }
 
   login(){
-
     this.navCtrl.push(ChatPage, {usuario:this.usuario, senha: this.senha });
   }
 }
