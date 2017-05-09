@@ -7,7 +7,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { AngularFireModule } from "angularfire2";
 import { ChatPage } from "../pages/chat/chat";
-import { LoginPage } from "../pages/login/login";
+import { AutenticacaoService } from "../services/autenticacao";
+import { SigninPage } from "../pages/signin/signin";
+import { RegistroPage } from "../pages/registro/registro";
+import { UsuarioService } from "../services/usuario";
 
 export const firebaseConfig={
     apiKey: "AIzaSyDUmqgZZkAl-TtejrW7dwNfsZKWmst1xYM",
@@ -22,7 +25,8 @@ export const firebaseConfig={
   declarations: [
     MyApp,
     ChatPage,
-    LoginPage
+    SigninPage,
+    RegistroPage
   ],
   imports: [
     BrowserModule,
@@ -33,12 +37,15 @@ export const firebaseConfig={
   entryComponents: [
     MyApp,
     ChatPage,
-    LoginPage
+    SigninPage,
+    RegistroPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AutenticacaoService,
+    UsuarioService
   ]
 })
 export class AppModule {}
