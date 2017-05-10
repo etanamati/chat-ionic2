@@ -8,6 +8,7 @@ import { ChatPage } from "../pages/chat/chat";
 import firebase from 'firebase';
 import { RegistroPage } from "../pages/registro/registro";
 import { FirebaseApp } from "angularfire2";
+import { HistoricoPage } from "../pages/historico/historico";
 
 @Component({
   templateUrl: 'app.html'
@@ -17,6 +18,7 @@ export class MyApp {
     isAuthenticated: boolean;
     signinPage = SigninPage;
     registroPage = RegistroPage;
+    historicoPage = HistoricoPage;
     
     @ViewChild('nav') nav: NavController;
     constructor(@Inject(FirebaseApp) firebaseApp: any,

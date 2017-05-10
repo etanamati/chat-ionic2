@@ -11,6 +11,9 @@ import { AutenticacaoService } from "../services/autenticacao";
 import { SigninPage } from "../pages/signin/signin";
 import { RegistroPage } from "../pages/registro/registro";
 import { UsuarioService } from "../services/usuario";
+import { HistoricoPage } from "../pages/historico/historico";
+import { HistoricoMensagensPage } from "../pages/historico-mensagens/historico-mensagens";
+import { MensagemService } from "../services/mensagem";
 
 export const firebaseConfig={
     apiKey: "AIzaSyDUmqgZZkAl-TtejrW7dwNfsZKWmst1xYM",
@@ -26,7 +29,9 @@ export const firebaseConfig={
     MyApp,
     ChatPage,
     SigninPage,
-    RegistroPage
+    RegistroPage,
+    HistoricoPage,
+    HistoricoMensagensPage
   ],
   imports: [
     BrowserModule,
@@ -38,14 +43,17 @@ export const firebaseConfig={
     MyApp,
     ChatPage,
     SigninPage,
-    RegistroPage
+    RegistroPage,
+    HistoricoPage,
+    HistoricoMensagensPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AutenticacaoService,
-    UsuarioService
+    UsuarioService,
+    MensagemService
   ]
 })
 export class AppModule {}

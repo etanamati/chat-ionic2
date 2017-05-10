@@ -13,9 +13,9 @@ export class ChatPage {
   mensagem: string;
   usuario: string;
 
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams,
-              public af: AngularFire,
+  constructor(private navCtrl: NavController, 
+              private navParams: NavParams,
+              private af: AngularFire,
               private usuarioService: UsuarioService) {
     this.usuario = this.navParams.get('usuario');
     this.lista=af.database.list("https://chat-50afe.firebaseio.com/");
