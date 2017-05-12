@@ -18,13 +18,24 @@
     <ion-item>
       <button ion-button (click)="enviarMsg()">Enviar</button>
     </ion-item>
-    <ion-item *ngFor="let item of lista | async">
-      
+    <!--<ion-item *ngFor="let item of lista | async">
       <p>Usuário: {{item.usuario}} </p>
       <p>Mensagem: {{item.texto}}</p>
       <ion-note item-right>
         {{item.data | date:'HH:mm'}}
       </ion-note>
-    </ion-item>
+    </ion-item>-->
   </ion-list>
+  <ion-list *ngFor="let mensagens of lista | async">
+      <p>{{mensagens.data}}</p>
+      <p>{{mensagens.mensagem}}</p>
+      <ion-item *ngFor="let mensagem of lista.mensagens | async">
+        <ion-avatar item-left>
+          <img src="img/avatar-finn.png">
+        </ion-avatar>
+        <h2>{{mensagem.usuario}}</h2>
+        <h3>{{mensagem.hora}}</h3>
+        <p>{{mensagem.texto}}</p>
+      </ion-item>
+    </ion-list>
 </ion-content>

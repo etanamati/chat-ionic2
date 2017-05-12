@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from "angularfire2";
-import { MensagemService } from "../../services/mensagem";
 
 /**
  * Generated class for the Historico page.
@@ -19,9 +18,7 @@ export class HistoricoPage {
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              private af: AngularFire,
-              private mensagemService: MensagemService) {
-    this.lista = mensagemService.getMensagens();
+              private af: AngularFire) {
   }
 
   ionViewDidLoad() {

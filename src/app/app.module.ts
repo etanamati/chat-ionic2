@@ -13,7 +13,8 @@ import { RegistroPage } from "../pages/registro/registro";
 import { UsuarioService } from "../services/usuario";
 import { HistoricoPage } from "../pages/historico/historico";
 import { HistoricoMensagensPage } from "../pages/historico-mensagens/historico-mensagens";
-import { MensagemService } from "../services/mensagem";
+import { ChatService } from "../services/chat";
+import { DatePipe } from '@angular/common';
 
 export const firebaseConfig={
     apiKey: "AIzaSyDUmqgZZkAl-TtejrW7dwNfsZKWmst1xYM",
@@ -53,7 +54,8 @@ export const firebaseConfig={
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AutenticacaoService,
     UsuarioService,
-    MensagemService
+    ChatService,
+    DatePipe
   ]
 })
 export class AppModule {}
