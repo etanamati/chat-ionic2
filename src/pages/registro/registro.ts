@@ -35,7 +35,7 @@ export class RegistroPage {
     const formCtrlConfirmaSenha: FormControl = new FormControl('', Validators.compose([Validators.required, ValidacoesGerais.valoresIguais(formCtrl)]));
     this.form = this.formBuilder.group({
       usuario: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
+      email: ['', Validators.required],
       senha: formCtrl,
       confirmacaoSenha: formCtrlConfirmaSenha
     });
