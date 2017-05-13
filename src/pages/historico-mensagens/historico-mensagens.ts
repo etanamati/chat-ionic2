@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Chat } from "../../models/chat";
 
 /**
  * Generated class for the HistoricoMensagens page.
@@ -12,12 +13,17 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'historico-mensagens.html',
 })
 export class HistoricoMensagensPage {
-  
+
+  private item: any;
+  private mensagens: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HistoricoMensagens');
+  ionViewWillEnter() {
+    
+    this.item = this.navParams.get('item');
+    this.mensagens = this.item.mensagens;
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from "angularfire2";
+import { HistoricoMensagensPage } from "../historico-mensagens/historico-mensagens";
+import { Chat } from "../../models/chat";
 
 /**
  * Generated class for the Historico page.
@@ -19,10 +21,14 @@ export class HistoricoPage {
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               private af: AngularFire) {
+    this.lista=af.database.list("https://chat-50afe.firebaseio.com/");
+
+
+    this.lista = af.database.list("chat");
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Historico');
+  seleciona(item:Chat){
+    this.navCtrl.push(HistoricoMensagensPage, {item: item});
   }
 
 }

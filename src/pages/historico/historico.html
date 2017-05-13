@@ -9,7 +9,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<!--<ion-content padding>
   <ion-list>
     <ion-item *ngFor="let item of lista | async">
       
@@ -19,5 +19,14 @@
         {{item.data | date:'HH:mm'}}
       </ion-note>
     </ion-item>
+  </ion-list>
+</ion-content>
+-->
+
+<ion-content>
+  <ion-list inset>
+    <button ion-item *ngFor="let item of lista | async" (click)="seleciona(item)">
+      {{ item.data }}
+    </button>
   </ion-list>
 </ion-content>

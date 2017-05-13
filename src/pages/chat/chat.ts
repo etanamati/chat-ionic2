@@ -40,59 +40,15 @@ export class ChatPage {
   }
 
   enviarMsg() {
-    console.log(this.usuario);
+    console.log(this.mensagem);
+    if (this.mensagem){
+      let conteudoMensagem = {
+        texto: this.mensagem,
+        hora: this.datePipe.transform(new Date(), 'HH:mm:ss'),
+        usuario: this.usuario    
+      }
 
-    let conteudoMensagem = {
-      texto: this.mensagem,
-      hora: this.datePipe.transform(new Date(), 'hh:mm:ss'),
-      usuario: this.usuario    
+      this.chatService.enviarMensagens(conteudoMensagem);
     }
-
-    this.chatService.enviarMensagens(conteudoMensagem);
-    /*let chat = {
-      data: this.datePipe.transform(new Date(), 'dd/MM/yyyy'),
-      mensagens: [
-        {
-          texto: this.mensagem,
-          hora: this.datePipe.transform(new Date(), 'hh:mm:ss'),
-          usuario: this.usuario    
-        }
-      ]
-    }
-*/
-    // const retorno = this.chatService.findChatByData(this.datePipe.transform(new Date(), 'dd/MM/yyyy'));
-    // retorno.subscribe(u =>  {
-    //   console.log('1u', u);
-    //   let conteudoMensagem = {
-    //     texto: this.mensagem,
-    //     hora: this.datePipe.transform(new Date(), 'hh:mm:ss'),
-    //     usuario: this.usuario    
-    //   }
-    //   if (u.length == 0){
-    //     this.novoChat = {
-    //       data: this.datePipe.transform(new Date(), 'dd/MM/yyyy'),
-    //       mensagens: [
-    //         conteudoMensagem
-    //       ]
-    //     }
-    //     this.chatService.enviarMensagem(this.novoChat);
-    //   }else{
-    //     //this.novoChat.mensagens.push(conteudoMensagem);
-    //     console.log('this.lista',this.lista);
-    //     this.lista.subscribe(dados => {
-          
-    //       console.log('dados', dados[0].mensagens);
-    //       //dados[0].mensagens.push(conteudoMensagem);
-    //       //console.log('dados-depois', dados[0].mensagens);
-
-    //       this.chatService.enviarMensagens(dados[0], conteudoMensagem);
-    //     });
-    //   }
-
-      
-    // });
-
-    
   }
-
 }
